@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+google-api-python-client  # For YouTube API
+google-auth-oauthlib
+pymongo
+scikit-learn
+nltk
+plotly
+wordcloud
+# MLOps tools
+mlflow
+pytest
+flake8
