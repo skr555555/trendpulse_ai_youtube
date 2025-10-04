@@ -7,6 +7,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
         with: { python-version: '3.9' }
+      - name: Download NLTK Data
+        run: python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('vader_lexicon'); nltk.download('punkt_tab')"
       - run: pip install -r requirements.txt
       - run: flake8 . --count --exit-zero
-      - run: pytest
+      - run: pytest -v
