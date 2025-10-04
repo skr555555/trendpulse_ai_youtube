@@ -1,0 +1,32 @@
+name: Scheduled Data Ingestion
+
+on:
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+  schedule:
+    # Runs at 08:00 UTC every day (you can adjust the schedule)
+    - cron: '0 */4 * * *'
+
+jobs:
+  ingest-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run ingestion pipeline
+        env:
+          # Use secrets to securely pass credentials to the script
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+        run: |
+          python run_pipeline.py
