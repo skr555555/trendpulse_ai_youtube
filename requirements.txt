@@ -1,16 +1,14 @@
 streamlit
 pandas
 numpy
-google-api-python-client
+google-api-python-client  # For YouTube API
 google-auth-oauthlib
 pymongo
 scikit-learn
 nltk
 plotly
 wordcloud
-# Multilingual and MLOps tools
-langdetect
-stopwordsiso
+# MLOps tools
 mlflow
 pytest
 flake8

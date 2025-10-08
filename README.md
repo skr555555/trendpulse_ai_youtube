@@ -5,8 +5,8 @@ TrendPulse AI is a dynamic analytics platform to monitor, analyze, and predict t
 ## MLOps Features
 - **Containerization:** Packaged with Docker for consistent deployment.
 - **CI/CD:** Automated testing and linting with GitHub Actions.
-- **Multilingual Cleaning:** Handles stopwords and characters for multiple languages.
 - **Experiment Tracking:** Uses MLflow to track model training runs.
+- **Automated Testing:** Unit tests with pytest to ensure code quality.
 
 ## Setup Instructions
 
